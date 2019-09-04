@@ -1,6 +1,10 @@
 logs/*
 !.gitkeep
 node_modules/
+lib/angular
+lib/angular-loader
+lib/angular-mocks
+lib/html5-boilerplate
 tmp
 .DS_Store
 .idea
