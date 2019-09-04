@@ -41,7 +41,7 @@ angular.module('myApp.booking', ['ngRoute', 'datatables'])
           return array;
         });
 
-        vm.dtInstance.rerender();
+        vm.dtInstance.reloadData(()=>{}, true);
       }
     });
 
