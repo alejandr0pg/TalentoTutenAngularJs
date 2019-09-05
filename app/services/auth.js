@@ -4,18 +4,17 @@ angular.module('myApp')
 
 .factory('authService', function($q, $http, $location, api, storageService){
     return {
-        isAuthenticated: function() {
-            return storageService.get('currentUser') ? true : false;
-        },
         authenticate : function(){
-            if(this.isAuthenticated){
+            const isAuthenticated = storageService.get('currentUser') ? true : false;
+            if(isAuthenticated){
                 return true;
             } else {
                 return $q.reject('Not Authenticated');
             }
         },
         guest : function(){
-            if(!this.isAuthenticated){
+            const isAuthenticated = storageService.get('currentUser') ? true : false;
+            if(!isAuthenticated){
                 return true;
             } else {
                 return $q.reject('Is Authenticated');

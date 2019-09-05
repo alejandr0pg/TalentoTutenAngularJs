@@ -15,6 +15,7 @@ angular.module('myApp', [
 // Redirigir en caso de error
 .run(function($rootScope, $location){
   $rootScope.$on('$routeChangeError', function(event, current, previous, rejection){
+      console.log('rejection', rejection);
       if(rejection === 'Not Authenticated'){
           $location.path('/');
       }
